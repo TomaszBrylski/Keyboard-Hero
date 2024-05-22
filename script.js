@@ -24,3 +24,13 @@ function getTimestamp() {
     return Math.floor(Date.now() / 1000)
 }
 
+document.addEventListener("keyup", event => {
+    const keyPressed = String.fromCharCode(event.keyCode);
+    const KeyElement = document.getElementById(keyPressed);
+    const highlightedKey = document.querySelector(".selected");
+
+    KeyElement.classList.add("hit")
+    KeyElement.addEventListener('animationend', () => {
+        KeyElement.classList.remove("hit")
+    })
+})
