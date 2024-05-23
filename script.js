@@ -33,4 +33,14 @@ document.addEventListener("keyup", event => {
     KeyElement.addEventListener('animationend', () => {
         KeyElement.classList.remove("hit")
     })
+
+    if (keyPressed === highlightedKey.innerHTML) {
+        timestamps.unshift(getTimestamp());
+        const elapsedTime = timestamps[0] - timestamps[1];
+        console.log(`Character per minute ${60/elapsedTime}`)
+        highlightedKey.classList.remove("selected");
+        targetRandomKey();
+    }
 })
+
+targetRandomKey();
