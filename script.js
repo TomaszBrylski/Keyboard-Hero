@@ -17,7 +17,7 @@ function getRandomKey() {
 function targetRandomKey() {
     const key = document.getElementById(getRandomKey());
     key.classList.add("selected");
-    let start = Data.now()
+    let start = Date.now()
 }
 
 function getTimestamp() {
